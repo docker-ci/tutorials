@@ -1,4 +1,4 @@
-# How to launch simple node application with mongodb
+# How to launch simple node application with mongodb using Docker-ci
 
 ## Try it first
 Let's check out tutorials repository and run the application!
