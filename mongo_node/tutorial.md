@@ -53,7 +53,7 @@ Application is really simple. It uses express.js and prints some hello world mes
 
 ## Killing existing application
 
-We want to make sure that no application with the same name is running. So, we are using @rm-f directive, which equals to "docker rm -f" command. If it does not suite for some reason, you can first kill and then soft remove.
+We want to make sure that no application with the same name is running. So, we are using @rm-f directive, which equals to "docker rm -f" command. If it does not suite you for some reason, you can first kill and then soft remove.
 
 ## Running app
 
