@@ -50,7 +50,6 @@ For some reason, i chose mongo 2.6.9 - feel free to use any version you like. Wh
 
 Application is really simple. It uses express.js and prints some hello world message. Each request prints out some text as well.
 
-Dockerfile - is also self explanatory.
 
 ## Killing existing application
 
