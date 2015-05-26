@@ -1,10 +1,10 @@
 @cleanup
 
 @run
-	name	: mymongo
-	image   : mongo:2.6.9
-	cmd     : mongod --smallfiles
-	wait    : logs_match -> '.*waiting for connections on port 27017.*'
+	name		: mymongo
+	image    : mongo:2.6.9
+	cmd      : mongod --smallfiles
+	wait     : logs_match -> '.*waiting for connections on port 27017.*'
 
 @build
 	tag   :  mongo_node_test
@@ -13,10 +13,10 @@
 # Launching our test application
 
 @rm-f mongo_node_test
-@run 
+@run
 	image  	: mongo_node_test
-	name 	: mongo_node_test
-	cmd  	: node app.js
+	name 		: mongo_node_test
+	cmd  		: node app.js
 	link   	: mymongo -> mongo
 	ports 	: 8080 -> 3000
-	daemon  : true
+	daemon  	: false
