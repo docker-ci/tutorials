@@ -55,7 +55,7 @@ Application is really simple. It uses express.js and prints some hello world mes
 
 We want to make sure that no application with the same name is running. So, we are using @rm-f directive, which equals to "docker rm -f" command. If it does not suite you for some reason, you can first kill and then soft remove.
 
-## Running app
+## Running the app
 
 Let's specify image and tag. These options are required. Following with command (cmd:), link to mongo and public ports. 
 
