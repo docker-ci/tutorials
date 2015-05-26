@@ -1,6 +1,9 @@
 # How to launch simple node application with mongodb using Docker-ci
 
-## Try it first
+Probably the best way to get along with docker-ci is to try this example. More comrehensive tutorial with more details is coming very soon.
+
+## Try it
+
 Let's check out tutorials repository and run the application!
 
 ```bash
@@ -35,8 +38,6 @@ docker-ci run
 	ports 	: 8080 -> 3000
 	daemon  	: false
 ```
-
-## Steps
 
 ## Cleaning up
 You always want to clean up dead containers before staring off a new app. Usage of @clean up is self explanatory.
