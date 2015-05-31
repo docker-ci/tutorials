@@ -8,10 +8,10 @@ Let's see the whole file
 ```python
 @cleanup
 @run
-	image	: mongo:2.6.9
-	name	: mymongo
-	command	: mongod
-	wait	: logs_match -> '.*waiting for connections on port 27017.*'
+	image   : mongo:2.6.9
+	name    : mymongo
+	command : mongod
+	wait    : logs_match -> '.*waiting for connections on port 27017.*'
 
 @volume
 	name 	: shared
@@ -25,7 +25,6 @@ Let's see the whole file
 	cache  : true
 
 @rm-f testapp
-
 @run
 	env-file    : ${dir}/env/${env|test}
 	name        : testapp
