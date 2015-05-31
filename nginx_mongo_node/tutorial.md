@@ -8,16 +8,16 @@ Let's see the whole file
 ```python
 @cleanup
 @run
-	image 	: mongo:2.6.9
-	name  	: mymongo
+	image	: mongo:2.6.9
+	name	: mymongo
 	command	: mongod
-	wait  	: logs_match -> '.*waiting for connections on port 27017.*'
+	wait	: logs_match -> '.*waiting for connections on port 27017.*'
 
 @volume
 	name 	: shared
-	mount : ${dir}/src/public                  -> /data/public
-	mount : ${dir}/shared/nginx/sites-enabled  -> /etc/nginx/conf.d
-	mount : ${dir}/shared/nginx/logs           -> /var/log/nginx
+	mount 	: ${dir}/src/public                  -> /data/public
+	mount 	: ${dir}/shared/nginx/sites-enabled  -> /etc/nginx/conf.d
+	mount 	: ${dir}/shared/nginx/logs           -> /var/log/nginx
 
 @build
 	tag    : testapp
