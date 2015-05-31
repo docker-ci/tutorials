@@ -13,9 +13,9 @@ Let's see the whole file
 
 @volume
 	name 	: shared
-	mount : ${dir}/src/public						        -> /data/public
-	mount : ${dir}/shared/nginx/sites-enabled 	-> /etc/nginx/conf.d
-	mount : ${dir}/shared/nginx/logs 				    -> /var/log/nginx
+	mount : ${dir}/src/public			-> /data/public
+	mount : ${dir}/shared/nginx/sites-enabled	-> /etc/nginx/conf.d
+	mount : ${dir}/shared/nginx/logs		-> /var/log/nginx
 
 @build
 	tag 	: testapp
