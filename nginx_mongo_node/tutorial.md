@@ -43,13 +43,13 @@ Let's see the whole file
 	link    : testapp -> testapp
 ```
 
-As i mentioned many times - we want to start off with cleaning up old containers
+As i mentioned before - we want to start off with cleaning up old containers
 
 ```python
 @cleanup
 ```
 
-Next, let's add some database for our application
+Next, let's add some database to our application
 
 ```python
 @run
@@ -59,7 +59,7 @@ Next, let's add some database for our application
 	wait  	: logs_match -> '.*waiting for connections on port 27017.*'
 ```
 
-You check previous tutorial, where this process is explained more detailed.
+Check the previous tutorial, where this process is explained in more details
 
 
 ## Mounting main volume
@@ -67,9 +67,9 @@ Let's mount a volume that contains all the necessary nginx configuration
 ```python
 @volume
 	name 	: shared
-	mount : ${dir}/src/public						        -> /data/public
-	mount : ${dir}/shared/nginx/sites-enabled 	-> /etc/nginx/conf.d
-	mount : ${dir}/shared/nginx/logs 				    -> /var/log/nginx
+	mount : ${dir}/src/public			-> /data/public
+	mount : ${dir}/shared/nginx/sites-enabled	-> /etc/nginx/conf.d
+	mount : ${dir}/shared/nginx/logs		-> /var/log/nginx
 ```
 
 Our default nginx configuration looks like this:
@@ -94,4 +94,10 @@ proxy_pass http://testapp:3000;
 
 And our public data is available in /data/ folder (which is mounted in the volume 'shared')
 *@copy directiv is coming soon* !
+
+```
+location /public {
+    root /data/;
+}
+```
 
