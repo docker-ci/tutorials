@@ -1,6 +1,6 @@
 # Launching node application that serves static files through nginx with docker-ci
 
-At some point you want to use nginx. It's fast, reliable. In this example i will show how to build a nodejs application with nginx as a frontend server. To make a bit more complicated - let's say, we want our static files served though nginx.
+At some point you want to use nginx. It's fast and reliable. In this example i will show how to build a nodejs application with nginx as a frontend server. To make a bit more complicated - let's say, we want our static files served though nginx.
 
 You can launch this code, cloning [this](https://github.com/docker-ci/tutorials/tree/master/nginx_mongo_node) code from github
 
@@ -20,19 +20,19 @@ Let's see the whole file
 	mount : ${dir}/shared/nginx/logs           -> /var/log/nginx
 
 @build
-	tag 	: testapp
-	path 	: .
-	cache 	: true
+	tag    : testapp
+	path   : .
+	cache  : true
 
 @rm-f testapp
 
 @run
-	env-file 	: ${dir}/env/${env|test}
-	name   		: testapp
-	image  		: testapp
-	link   		: mymongo -> mongo
-	daemon  		: true
-	volume 		: shared
+	env-file    : ${dir}/env/${env|test}
+	name        : testapp
+	image       : testapp
+	link        : mymongo -> mongo
+	daemon      : true
+	volume      : shared
 
 
 @rm-f nginx
