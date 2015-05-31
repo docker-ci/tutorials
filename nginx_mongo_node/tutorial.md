@@ -2,6 +2,8 @@
 
 At some point you want to use nginx. It's fast, reliable. In this example i will show how to build a nodejs application with nginx as a frontend server. To make a bit more complicated - let's say, we want our static files served though nginx.
 
+You can launch this code, cloning [this][https://github.com/docker-ci/tutorials/tree/master/nginx_mongo_node] code from github
+
 Let's see the whole file
 ```python
 @cleanup
@@ -111,7 +113,7 @@ Building our application and call it "testapp"
 	cache 	: true
 ```
 
-## Running the application
+## Running the node application
 ```
 @rm-f testapp
 @run
@@ -123,9 +125,24 @@ Building our application and call it "testapp"
 	volume   : shared
 ```
 
-Removing the application (if is running already). 
+Removing the application (if is running). 
 Setting enviroments with [env option](/documentation#env-file)
 [Linking mongo]((/documentation#link)) (just for fun), setting [daemon](/documentation#daemon) mode, mounting previously describe *shared* [volume](/documentation#volume)
+
+## Running nginx (frontend)
+
+Finally, all our containers are up and running. It's time to launch NGINX!
+```
+@rm-f nginx
+@run
+	image	: nginx
+	name 	: nginx
+	ports 	: 80 -> 80
+	volume 	: shared
+	link    : testapp -> testapp
+```
+
+
 
 
 
