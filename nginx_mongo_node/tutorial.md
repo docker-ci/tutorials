@@ -2,7 +2,7 @@
 
 At some point you want to use nginx. It's fast, reliable. In this example i will show how to build a nodejs application with nginx as a frontend server. To make a bit more complicated - let's say, we want our static files served though nginx.
 
-You can launch this code, cloning [this][https://github.com/docker-ci/tutorials/tree/master/nginx_mongo_node] code from github
+You can launch this code, cloning [this](https://github.com/docker-ci/tutorials/tree/master/nginx_mongo_node) code from github
 
 Let's see the whole file
 ```python
