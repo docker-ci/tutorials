@@ -13,9 +13,9 @@ Let's see the whole file
 
 @volume
 	name 	: shared
-	mount : ${dir}/src/public			-> /data/public
-	mount : ${dir}/shared/nginx/sites-enabled	-> /etc/nginx/conf.d
-	mount : ${dir}/shared/nginx/logs		-> /var/log/nginx
+	mount : ${dir}/src/public                  -> /data/public
+	mount : ${dir}/shared/nginx/sites-enabled  -> /etc/nginx/conf.d
+	mount : ${dir}/shared/nginx/logs           -> /var/log/nginx
 
 @build
 	tag 	: testapp
@@ -100,4 +100,33 @@ location /public {
     root /data/;
 }
 ```
+
+## Building node app
+Building our application and call it "testapp"
+
+```
+@build
+	tag 	: testapp
+	path 	: .
+	cache 	: true
+```
+
+## Running the application
+```
+@rm-f testapp
+@run
+	env-file : ${dir}/env/${env|test}
+	name     : testapp
+	image    : testapp
+	link     : mymongo -> mongo
+	daemon   : true
+	volume   : shared
+```
+
+Removing the application (if is running already). 
+Setting enviroments with [env option](/documentation#env-file)
+[Linking mongo]((/documentation#link)) (just for fun), setting [daemon](/documentation#daemon) mode, mounting previously describe *shared* [volume](/documentation#volume)
+
+
+
 
