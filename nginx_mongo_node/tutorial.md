@@ -134,10 +134,10 @@ Finally, all our containers are up and running. It's time to launch NGINX!
 ```
 @rm-f nginx
 @run
-	image	: nginx
-	name 	: nginx
-	ports 	: 80 -> 80
-	volume 	: shared
+	image   : nginx
+	name    : nginx
+	ports   : 80 -> 80
+	volume  : shared
 	link    : testapp -> testapp
 ```
 
